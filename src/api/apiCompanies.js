@@ -21,7 +21,7 @@ export async function addNewCompany(token, _, companyData) {
   const fileName = `logo-${random}-${companyData.name}`;
 
   const { error: storageError } = await supabase.storage
-    .from("company-logo")
+    .from("company-logo") //The bucket id where to store the logo
     .upload(fileName, companyData.logo);
 
   if (storageError) throw new Error("Error uploading Company Logo");
