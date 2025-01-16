@@ -173,7 +173,7 @@ const PostJob = () => {
         {errorCreateJob?.message && (
           <p className="text-red-500">{errorCreateJob?.message}</p>
         )}
-        <Button type="submit" variant="blue" size="lg" className="mt-2">
+        <Button type="submit" size="lg" className="mt-2 bg-blue-800">
           Submit
         </Button>
       </form>
