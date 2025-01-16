@@ -3,7 +3,6 @@ import JobCard from "@/components/job-card";
 import useFetch from "@/hooks/use-fetch";
 import { useUser } from "@clerk/clerk-react";
 import { useEffect } from "react";
-import { BarLoader } from "react-spinners";
 
 const SavedJobs = () => {
   const { isLoaded } = useUser();
@@ -22,12 +21,12 @@ const SavedJobs = () => {
   }, [isLoaded]);
 
   if (!isLoaded || loadingSavedJobs) {
-    return <BarLoader className="mb-4" width={"100%"} color="#36d7b7" />;
+    return <></>;
   }
 
   return (
     <div>
-      <h1 className="gradient-title font-extrabold text-6xl sm:text-7xl text-center pb-8">
+      <h1 className="font-extrabold text-6xl sm:text-7xl text-center pb-8">
         Saved Jobs
       </h1>
 

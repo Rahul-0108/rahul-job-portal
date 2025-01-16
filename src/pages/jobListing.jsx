@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useUser } from "@clerk/clerk-react";
 import { State } from "country-state-city";
-import { BarLoader } from "react-spinners";
 import useFetch from "@/hooks/use-fetch";
 
 import JobCard from "@/components/job-card";
@@ -69,12 +68,12 @@ const JobListing = () => {
   };
 
   if (!isLoaded) {
-    return <BarLoader className="mb-4" width={"100%"} color="#36d7b7" />;
+    return <></>;
   }
 
   return (
     <div className="">
-      <h1 className="gradient-title font-extrabold text-6xl sm:text-7xl text-center pb-8">
+      <h1 className="font-extrabold text-6xl sm:text-7xl text-center pb-8">
         Latest Jobs
       </h1>
       <form
@@ -83,11 +82,11 @@ const JobListing = () => {
       >
         <Input
           type="text"
-          placeholder="Search Jobs by Title.."
+          placeholder="Search Jobs"
           name="search-query"
           className="h-full flex-1  px-4 text-md"
         />
-        <Button type="submit" className="h-full sm:w-28" variant="blue">
+        <Button type="submit" className="h-full sm:w-28 bg-blue-800" >
           Search
         </Button>
       </form>
@@ -95,7 +94,7 @@ const JobListing = () => {
       <div className="flex flex-col sm:flex-row gap-2">
         <Select value={location} onValueChange={(value) => setLocation(value)}>
           <SelectTrigger>
-            <SelectValue placeholder="Filter by Location" />
+            <SelectValue placeholder="Location" />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
@@ -115,7 +114,7 @@ const JobListing = () => {
           onValueChange={(value) => setCompany_id(value)}
         >
           <SelectTrigger>
-            <SelectValue placeholder="Filter by Company" />
+            <SelectValue placeholder="Company" />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
@@ -130,17 +129,13 @@ const JobListing = () => {
           </SelectContent>
         </Select>
         <Button
-          className="sm:w-1/2"
-          variant="destructive"
+          className="sm:w-1/2 bg-red-500"
           onClick={clearFilters}
         >
           Clear Filters
         </Button>
       </div>
 
-      {loadingJobs && (
-        <BarLoader className="mt-4" width={"100%"} color="#36d7b7" />
-      )}
 
       {loadingJobs === false && (
         <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -155,7 +150,7 @@ const JobListing = () => {
               );
             })
           ) : (
-            <div>No Jobs Found 😢</div>
+            <div>No Jobs Available</div>
           )}
         </div>
       )}

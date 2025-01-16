@@ -18,7 +18,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import useFetch from "@/hooks/use-fetch";
 import { applyToJob } from "@/api/apiApplication";
-import { BarLoader } from "react-spinners";
 
 const schema = z.object({
   experience: z
@@ -149,7 +148,6 @@ export function ApplyJobDrawer({ user, job, fetchJob, applied = false }) {
           {errorApply?.message && (
             <p className="text-red-500">{errorApply?.message}</p>
           )}
-          {loadingApply && <BarLoader width={"100%"} color="#36d7b7" />}
           <Button type="submit" variant="blue" size="lg">
             Apply
           </Button>

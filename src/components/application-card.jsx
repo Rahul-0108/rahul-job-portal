@@ -16,7 +16,6 @@ import {
 } from "./ui/select";
 import { updateApplicationStatus } from "@/api/apiApplication";
 import useFetch from "@/hooks/use-fetch";
-import { BarLoader } from "react-spinners";
 
 const ApplicationCard = ({ application, isCandidate = false }) => {
   const handleDownload = () => {
@@ -39,7 +38,6 @@ const ApplicationCard = ({ application, isCandidate = false }) => {
 
   return (
     <Card>
-      {loadingHiringStatus && <BarLoader width={"100%"} color="#36d7b7" />}
       <CardHeader>
         <CardTitle className="flex justify-between font-bold">
           {isCandidate

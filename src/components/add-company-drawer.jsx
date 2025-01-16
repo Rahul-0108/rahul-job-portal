@@ -15,7 +15,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import useFetch from "@/hooks/use-fetch";
 import { addNewCompany } from "@/api/apiCompanies";
-import { BarLoader } from "react-spinners";
 import { useEffect } from "react";
 
 const schema = z.object({
@@ -100,7 +99,6 @@ const AddCompanyDrawer = ({ fetchCompanies }) => {
           {errorAddCompany?.message && (
             <p className="text-red-500">{errorAddCompany?.message}</p>
           )}
-          {loadingAddCompany && <BarLoader width={"100%"} color="#36d7b7" />}
           <DrawerClose asChild>
             <Button type="button" variant="secondary">
               Cancel

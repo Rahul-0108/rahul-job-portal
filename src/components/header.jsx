@@ -39,7 +39,7 @@ const Header = () => {
   return (
     <>
       <nav className="py-4 flex items-center justify-end">
-        <div className="flex gap-8">
+        {window.location.pathname !== "" && window.location.pathname !== "/" && <div className="flex gap-8">
           {/* <SignedOut>
             <Button variant="outline" onClick={() => setShowSignIn(true)}>
               Login
@@ -48,9 +48,8 @@ const Header = () => {
           <SignedIn>
             {user?.unsafeMetadata?.role === "recruiter" && (
               <Link to="/post-job">
-                <Button variant="destructive" className="rounded-full">
-                  <PenBox size={20} className="mr-2" />
-                  Post a Job
+                <Button  className="rounded-full">
+                  Post Job
                 </Button>
               </Link>
             )}
@@ -76,7 +75,7 @@ const Header = () => {
               </UserButton.MenuItems>
             </UserButton>
           </SignedIn>
-        </div>
+        </div>}
       </nav>
 
       {showSignIn && (

@@ -82,3 +82,20 @@
     @apply gradient text-transparent bg-clip-text;
   }
 }
+
+.elevated-div {
+  background-color: white; /* Ensures the shadow is visible */
+  padding: 20px; /* Adds spacing inside the div */
+  border-radius: 10px; /* Gives rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 6px 6px rgba(0, 0, 0, 0.23); /* More pronounced shadow */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition on hover and interaction */
+}
+
+.elevated-div:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), 0 10px 15px rgba(0, 0, 0, 0.25); /* Dramatic shadow on hover */
+  transform: translateY(-5px); /* Adds a floating effect */
+}
+
+.main-screen {
+  height: 100vh;
+}

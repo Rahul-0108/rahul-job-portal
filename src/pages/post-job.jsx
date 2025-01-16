@@ -21,7 +21,6 @@ import { State } from "country-state-city";
 import { useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { Navigate, useNavigate } from "react-router-dom";
-import { BarLoader } from "react-spinners";
 import { z } from "zod";
 
 const schema = z.object({
@@ -79,7 +78,7 @@ const PostJob = () => {
   }, [isLoaded]);
 
   if (!isLoaded || loadingCompanies) {
-    return <BarLoader className="mb-4" width={"100%"} color="#36d7b7" />;
+    return <></>;
   }
 
   if (user?.unsafeMetadata?.role !== "recruiter") {
@@ -88,8 +87,8 @@ const PostJob = () => {
 
   return (
     <div>
-      <h1 className="gradient-title font-extrabold text-5xl sm:text-7xl text-center pb-8">
-        Post a Job
+      <h1 className="font-extrabold text-5xl sm:text-7xl text-center pb-8">
+        Post New Job
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -174,7 +173,6 @@ const PostJob = () => {
         {errorCreateJob?.message && (
           <p className="text-red-500">{errorCreateJob?.message}</p>
         )}
-        {loadingCreateJob && <BarLoader width={"100%"} color="#36d7b7" />}
         <Button type="submit" variant="blue" size="lg" className="mt-2">
           Submit
         </Button>

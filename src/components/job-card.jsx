@@ -13,7 +13,6 @@ import useFetch from "@/hooks/use-fetch";
 import { deleteJob, saveJob } from "@/api/apiJobs";
 import { useUser } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
-import { BarLoader } from "react-spinners";
 
 const JobCard = ({
   job,
@@ -53,10 +52,7 @@ const JobCard = ({
   }, [savedJob]);
 
   return (
-    <Card className="flex flex-col">
-      {loadingDeleteJob && (
-        <BarLoader className="mt-4" width={"100%"} color="#36d7b7" />
-      )}
+    <Card className="flex flex-col elevated-div">
       <CardHeader className="flex">
         <CardTitle className="flex justify-between font-bold">
           {job.title}
