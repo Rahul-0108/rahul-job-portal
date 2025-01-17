@@ -99,3 +99,7 @@
 .main-screen {
   height: 100vh;
 }
+
+body {
+  font-family: "Poppins";
+}
