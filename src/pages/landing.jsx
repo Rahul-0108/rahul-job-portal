@@ -9,14 +9,14 @@ const LandingPage = () => {
           Explore Jobs
         </h1>
       </section>
-      <div className="flex gap-6 justify-center">
+      <div className="flex gap-2 justify-center">
         <Link to={"/post-job"}>
-          <Button className="bg-red-500" size="xl">
+          <Button className="bg-red-500" size="xl" style={{width:"140px"}}>
             Hire Someone
           </Button>
         </Link>
         <Link to={"/jobs"}>
-          <Button className="bg-blue-800" size="xl">
+          <Button className="bg-blue-800" size="xl" style={{width:"140px"}}>
             Apply Job
           </Button>
         </Link>

@@ -76,22 +76,8 @@ const JobListing = () => {
       <h1 className="font-extrabold text-6xl sm:text-7xl text-center pb-8">
         Latest Jobs
       </h1>
-      <form
-        onSubmit={handleSearch}
-        className="h-14 flex flex-row w-full gap-2 items-center mb-3"
-      >
-        <Input
-          type="text"
-          placeholder="Search Jobs"
-          name="search-query"
-          className="h-full flex-1  px-4 text-md"
-        />
-        <Button type="submit" className="h-full sm:w-28 bg-blue-800" >
-          Search
-        </Button>
-      </form>
 
-      <div className="flex flex-col sm:flex-row gap-2">
+      <div className="flex flex-col sm:flex-row gap-2" style={{marginBottom: "1rem"}}>
         <Select value={location} onValueChange={(value) => setLocation(value)}>
           <SelectTrigger>
             <SelectValue placeholder="Location" />
@@ -135,6 +121,21 @@ const JobListing = () => {
           Clear Filters
         </Button>
       </div>
+
+      <form
+        onSubmit={handleSearch}
+        className="h-14 flex flex-row w-full gap-2 items-center mb-3"
+      >
+        <Input
+          type="text"
+          placeholder="Search Jobs"
+          name="search-query"
+          className="h-full flex-1  px-4 text-md"
+        />
+        <Button type="submit" className="h-full sm:w-28 bg-blue-800" >
+          Search
+        </Button>
+      </form>
 
 
       {loadingJobs === false && (
